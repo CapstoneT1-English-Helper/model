@@ -1,0 +1,47 @@
+<head>
+    <title>이미지 활용 영작 학습 프로그램</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header-div">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8 text-center slide-text">
+                    <h1>We will help your English study!</h1>
+                    <h2>Let's Upload your Image File</h2>
+                    <p>이미지를 사용한 영작 학습 프로그램입니다. 이미지를 업로드 해주세요.</p>
+                </div>
+                <!-- End col-md-8-->
+                <div class="col-md-offset-2"></div>
+                <!-- End col-md-offset-2 -->
+            </div>
+            <!-- End Row -->
+        </div>
+        <!-- End Contanier -->
+
+        <div class="image-file-upload">
+            <div class="photo-upload-view">
+                <form id="upload" action="/predict" method="POST" enctype="multipart/form-data">
+                    <div class="upload-btn-wrapper">
+                        <button class="mx-auto btn">Image Upload</button>
+                        <input type="file" id="file" value="Upload" name="image" />
+                    </div>
+                    <div class="mx-auto result_btn">
+                        <input type="submit" value="result" />
+                        {% if label %}
+                            <span class="result_lable">
+                                {{ label }}
+                            </span>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--End header-div-->
+</body>
